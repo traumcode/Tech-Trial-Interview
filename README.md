@@ -1408,5 +1408,51 @@ Dorim ca clasele noastre să fie deschise la extensie, așa că ne-am reorganiza
 
 # Advanced/Spring/Web
 
+### Ce este Spring ?
 
 
+
+**Spring** este un framework open source care asigura mediul si simplificarea scrierii aplicatiilor in limbajul Java.
+
+### Ce este Spring Boot?
+
+
+
+**Spring Boot** este un framework ce ofera un suport vast pentru crearea unei infrastruccturi de dezvoltare a aplicatiilor Java. **Spring Boot** structureaza programul si legaturile intre entitati, usurand lucrul programatorului. **Spring Boot** ofera o platforma buna pentru dezvoltatorii Java pentru a dezvolta o aplicatie **Spring** autonoma si de productie pe care o putem rula.
+
+
+
+##### Ce aplicatii are Java Spring Boot ?
+
+**Spring** **Boot**  este folosit la crearea microserviciilor(arhitectura care permite dezvoltatorilor sa creeze servicii independent, fiecare serviciu avand procesul lui).
+
+###### Cele mai importante aplicatii sunt:
+
+- Aplicatii web sigure
+- Backend pentru aplicatii mobile
+- Furnzior API
+- Software pentru intreprinderi
+
+
+
+##### Avantaje:
+
+- Usor de inteles si de dezvoltat aplicatii **Spring**
+- Creste productivitatea 
+- Reduce timpul de dezvoltare
+
+Ne permite accelerarea crearii unei aplicatii web. Acesta analizand confugurarile setate de catre programator si injecteaza toate dependintele necesare pentru satisfacerea cerintelor acestuia.
+
+Avantajele de baza **Spring Boot** sunt autoconfigurarea, independenta su autonomia acestuia de a lua decizii pentru a face o aplicatie cat mai optimizata. **Spring Boot** este independent si ofera posibilitatea de a integra toate serviciile automat. De exemplu, nu are nevoie de un server container aparte in care sa fie plasata aplicația, acesta oferind unul implicit, rulându-l la startul aplicației.
+
+
+
+##### De ce Spring Boot ?
+
+Alegem **Spring Boot** datorita caracteristicilor si beneficiilor pe care le ofera:
+
+- Ofera o modalitate flexibila de a configura Java Beans, configuratii XML si tranzactii cu baze de date.
+- Ofera o procesara puternica  si gestioneaza endpointurile REST
+- In **Spring Boot** totul este configurat automat , nu sunt necesare configurari manuale
+- Ofera aplicatii **Spring** bazate pe adnotari
+- Include Embedded Servlet Container , adică Container Servlet incorporat
