@@ -294,7 +294,7 @@ Observam modificatorul **protected** in clasa *Vehicle* ?  Am setat atributul ma
 
 ##### The final Keyword
 
-Daca nu doriti ca alte clase sa mosteneasca de la o clasa, utilizati keywordul **final**
+Daca nu doriti ca alte clase sa mosteneasca de la o clasa, utilizați keywordul **final**
 
 ### Polimorfismul
 
@@ -302,7 +302,7 @@ Daca nu doriti ca alte clase sa mosteneasca de la o clasa, utilizati keywordul *
 
 Polimorfismul inseamna "**multe forme**" si apare atunci cand avem multe clase care sunte legate intre ele prin mostenire.
 
-**Mostenirea** ne permite sa mostenim **atribute** si **metode** de la o alta clasa. **Polimorfismul** foloseste acele metode pentru a indeplini diferite sarcini. Acest lucru ne permite sa efectuam o singura actiune in moduri diferite.
+**Mostenirea** ne permite sa mostenim **atribute** si **metode** de la o alta clasa. **Polimorfismul** foloseste acele metode pentru a indeplini diferite sarcini. Acest lucru ne permite sa efectuam o singura acțiune în moduri diferite.
 
 De exemplu: **O superclasa** *Animal* care are o metoda numita **animalSound()**. **Subclasele** de animale ar putea fi *porc,* *pisica*, *caine*, si au de asemenea, propria lor implementare a unui sunet de animal (**animalSound()**), *pisica* miauna, *cainele* latra.
 
@@ -678,6 +678,38 @@ Spre deosebire de HashTable permite stocarea cheilor nule insa poate avea o sing
 2. Iterator poate fi folosit cu orice clasa a colectiei in timp ce Enumaration poate fi folosit numai cu clasa mostenita a cadrulu de colectie cum ar fi Vector sau HashTable
 3. Iterator are metodele  - hasNext()(**returneaza true daca iteratia are mai multe elemente**), next()(**returneaza urmatorul element**), remove()(**sterge un element din iteratie  **) // Enumaration are metodele - hasMoreElements() (**verifica daca enumeratia contine mai multe elemente**) , nextElement() (**returneaza elementul urmator daca enumaratie contine mai mult de un element**)
 
+
+
+#### Ce este hashingul ?
+
+Hashing este procesul de schimbare a unui text simplu sau a unei chei într-o valoare **hash** prin aplicarea unei **funcții hash**. De obicei, lungimea de intrare este mai mare ca dimensiune decât valoarea hash de ieșire. **Hashing** este un proces de criptare unidirecțional, astfel încât o valoare hash nu poate fi inversată pentru a ajunge la textul simplu original. **Hashingul** este utilizat în criptare pentru a securiza informațiile partajate între două părți. Parolele sunt transformate în valori hash, astfel încât, chiar dacă apare o încălcare a securității, codurile PIN rămân protejate. 
+
+###### Cum functioneaza hashingul ?
+
+Doua chei diferite pot produce o valoare **hash** identica, ceea ce duce la o coliziune. Pentru ca hashingul sa functioneze eficient, ar trebui sa modificati algoritmul de hashing, astfel incat sa existe sanse minime de coliziune. Algoritmii de hash produc apoi valori hash diferite pentru cheile alternative. Unele caracteristici cheie ale hashului includ:
+
+1. Un sir de intrare ar trebuie sa aibe o valoare hash speicifica **Hashinug-ul** ar trebui sa fie ireversibil.
+2. O functie hash trebuie sa fie rapida
+3. O usoara modificare a intrarii ar trebui sa produca un hash diferit
+
+###### Algoritmi hashing:
+
+1. Message Digest(MD5)
+2. SHA - Secure Hashing Algorithm
+3. RIPMEND
+
+###### Scopul Hashingului:
+
+Hashing-ul este necesar în momentul comparării unei cantități uriașe de date. Puteți crea diferite valori hash pentru date diferite. Puteți compara și hashurile.
+
+- Este usor sa pastrati si sa gasiti inregistrari ale datelor hashing.
+- Puteti utiliza hashing in aplicatii criptografica, cum ar fi o sematura digitala.
+- 
+
+#### Care este diferenta dintre encriptare si hashing ?
+
+Deoarece criptarea este bidirectionala, datele pot fi decriptate, astfel incat sa poata fi citite din nou. Hashing, pe de alta parte, este unidirectional, ceea ce inseamna ca textul simplu este amestecat intr-un rezumat unic, prin utilizarea unei sari care nu poate fi decriptata.
+
 ### Ce este un ArrayList ?
 
 
@@ -875,6 +907,25 @@ checkAge(20);
 **Outputul** va fi:
 
 "Access granted - You are old enough!"
+
+
+
+#### Unchecked exceptions
+
+Sunt exceptiile care tin de logica
+
+##### Lista exceptiilor unchecked:
+
+⦁	ArithmeticException.
+⦁	ClassCastException.
+⦁	NullPointerException.
+⦁	ArrayIndexOutOfBoundsException.
+⦁	NegativeArraySizeException.
+⦁	ArrayStoreException.
+⦁	IllegalThreadStateException.
+⦁	SecurityException, etc.
+
+Acele exceptii care nu sunt verificate in timpul compilarii si tin de logica programatorului. Bad programming.
 
 ### Clasele Wrapper
 
