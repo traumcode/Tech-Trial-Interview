@@ -1456,3 +1456,208 @@ Alegem **Spring Boot** datorita caracteristicilor si beneficiilor pe care le ofe
 - In **Spring Boot** totul este configurat automat , nu sunt necesare configurari manuale
 - Ofera aplicatii **Spring** bazate pe adnotari
 - Include Embedded Servlet Container , adică Container Servlet incorporat
+
+##### Cum functioneaza ?
+
+**Spring Boot** configureaza automat aplicatia pe baza dependintelor care sunt adaugate la proiect folosint adnotarea **@EnableAutoConfiguration** . De exemplu, daca baza de date **MySQL** se afla pe calea clasei, dar nu ati configurat nicio conexiune la baza de date, atunci **Spring Boot** va configura automat o baza de date in memorie.
+
+Punctul De intrare al aplicatiei **Spring Boot** este clasa care contine adnotarea **SpringBootApplication** si metoda princpiala.
+
+**Spring Boot** scaneaza automat toate componentele incluse in proiect utilizand adnotarea **@ComponentScan**
+
+### Diferentele dintre Java Standard Edition si Java Enterprise Edition
+
+
+
+Tehnologia Java este atat un limbaj de programare cat si o platforma.
+
+**Limbajul Java** este un limbaj de programare orientat pe obiecte.
+
+**O platforma Java** este un mediu particular in care aplicatiile scrise in limbaj Java sunt rulate. Exista 4 platforme:
+
+1. Java Standard Edition (Java SE)
+2. Java Enterprise Edition (Java EE)
+3. Java Micro Edition (Java Me)
+4. JavaFX
+
+Platforma EE difera de SE prin faptul ca adauga bibleoteci care ofera functionalitati pentru a implementa Java software cu toleranta la erori, bazat in mare parte pe compnente modulare care ruleaza pe un server . .
+
+Java EE este folosit pentru a dezvolta aplicatii de intreprindere in timp ce Java SE este folosit pentru aplicatii desktop portabile. Java EE necesita mai putina memorie.
+
+##### Java EE
+
+- Ofera API-uri pentru rularea aplicatiilor la scara larga.
+- Ofera functionalitati precum servleturi , Java Beans
+- Este o aplicatie structurata cu straturi separate **Client Business Enterprise**
+
+### Avantajele Spring Framework
+
+- In ceea ce priveste dimenisunea si functionalitatea sa este foarte usor. Asta datorita implementarii POJO (Plain Old Java Object) care nu il obliga sa mosteneasca nicio clasa sau sa implementeze nici o interfata. Pojo este un obiect java obisnuit fara restrictii speciale, altele decat cele impuse de specificatia limbajului Java si care nu necesita nicio cale de clasa. POJO-urile sunt folosite  pentru a creste lizibilitatea si reutilizarea unui program. 
+- Programare orientata pe aspecte care este utilizata pentru a separa preocuparile transverale (de exemplu loggin, security), de logica de business a aplicatiei
+
+
+
+### Ce este un servlet ?
+
+
+
+Un servlet este pur si simplu o clasa care raspunde la un anumit timp de solicitare de retea - cel mai drecvent este solicitarea **HTTP**. Sunt de obicei folosite pentru a implementa aplicatii web. Servleturile ruleaza intr-un container de servlet care se ocupa de partea de retea (de exemplu analizarea unei cereri HTTP, gestionarea conexiunii.)
+
+Este o clasa care este utilizata pentru a extinde capactitatile serverelor care gazduiest aplicatii accesate prin intermediul unui model de programare cerere-raspuns. Desi ele pot raspunde la orice tip de solicitare, ele sunt utilizate in mod obisnuit pentru a extinde aplicatiile gazduite pe serverele web. Pachetele **javax.servlet** si **javax.servlet.http** ofera interfete si clase pentru scrierea servlet-urilor. Toate servleturile trebuie sa implementeze **interfata Servlet** care defineste metodele ciclului de viata. Cand implementati un serviciu generic, puteti utiliza sau extinde clasa **GenericServlet** furnizata cu **API**-ul **Java Servlet**. Clasa **HttpServlet** ofera metode, cum ar fi **doGet** si **doPost** pentru gestionarea serviciilor HTTP.
+
+**Servlet**-urile sunt programele Java care ruleaza pe serverul web sau serverul aplicatiei. Sunt folosite pentru a gestiona cererea obtinuta de la serverul web, pentru a procesa cererea, pentru a produce raspunsul, apoi pentru a trimite raspunsul inapoi catre serverul web. In **Spring MVC** toate solicitarile primite trec printr-un singur servlet. Acest servlet - DispatcherServlet - este controlerul frontal. Controlerul frontal este un model tipic de design în dezvoltarea aplicațiilor web. În acest caz, un singur servlet primește toate solicitările și le transferă către toate celelalte componente ale aplicației.
+
+### Cand folosim RestControllers ? Cand folosim Controllers ?
+
+
+
+Adnotarea **@RestController ** din **Spring MVC** nu este altdeva decat o combinatie a adnotarii **@Controller** si **@ResponseBody**
+
+**@ResponseBody** poate fi pusa intr-o metoda si indica faptul ca tipul de returnare truie scris direct in corpul raspunsului **HTTP**(si nu plasat intr-un Model sau interpretat ca un nume de vizualizare)
+
+
+
+Sarcina lui **@Controller** este sa creeze o harta a obiectului model si sa gaseasca un view, dar **@RestController** pur si simplu returneaza obiectul iar datele obiectului sunt scrise direct in raspunsul **HTTP** ca **JSON** sau **XML**
+
+Acest lucru se poate face si cu **@Controller** traditional si utilizand **ResponseBody** dar deoarecce acesta este comportamentul implicit al serviciilor **Web RESTful** Spring a introdus **@RestController** care a combinat comportamentul **@Controller** si **@ResponseBody** impreuna.
+
+### Diferenta dintre .jar si .war
+
+
+
+**WAR** inseamna **Web Application Resource**. Fisierele **.war** sunt utilizate numai pentru aplicatii web. Avem nevoie de un server pentru a executa **.war**
+
+**JAR** inseamna **Java Archive File**. Fisierele **.jar** ne permit sa ambalam mai multe fisiere pentru a le folosi ca bibleoteca, plugin sau orice fel de aplicatie. Deci fisierele **.jar** sunt fisiere arhiva care includ un fisier manifest specific Java. Sunt construite pe format ZIP.
+
+Un fisier **.jar** permite sa implementeze eficient o intreaga aplicatie, inclusiv clasele si resursele asociate acestora intr-o singura solicitare. Elementele fisierului pot fi comprimate scurtand timpul de descarcare.
+
+### La ce este folosit Maven ?
+
+
+
+**Maven** este un instrument puternic de management de proiect care se bazeaza pe **POM** (projecct object model). Este folosit pentru construirea de proiecte, dependințe si documentare. Simplifica procesul ca **ANT ** dar este mult mai avansat.
+
+Este un instrument care poate fi folosit pentru construirea si gestionarea oricarui proiect baza pe Java. **Maven** usureaza munca dezvoltatorilor Java si ajuta, in general la intelegerea oricarui proiect bazat pe Java
+
+### Ce contine POM.XML ?
+
+
+
+**POM** sunt fisiere **XML** care contin infromatii legate de proiect si informații de configurare, cum ar fi dependinte, directorul sursa, plugin-uri, obiective etc. utilizate de **Maven** pentru a construi proiectul. Cand trebuie sa executati o comanda Maven, ii dati un fisier **POM** pentru a executa comenzile. Maven cteste fisierul **pom.xml** pentru a-si realiza configurarea si operatiunile.
+
+
+
+## Object Relational Mapping, JPA
+
+### Ce este ORM ? Beneficii. Cand folosim ?
+
+
+
+Este o tehnica de conversie a datelor intre un limbaj orientat pe obiect si o baza de date relationala, din cauza tipurilor de date necompatibile. Pe de-o parte exista obiecte cu fielduri de orice fel, iar pe de alta parte exista baze de date cu tabele cu coloane de cateva tipuri definite. Cu ajutorul unui **ORM**, definim modul in care obiectele noastre ar trebui sa fie inserate intr-o baza de date. Un cadru **ORM** ajuta in acest sens (de exemplu **Hibernate**)
+
+###### Avantaje:
+
+- Mai putin cod: accesarea datelor este asigurata de **ORM**
+- Nu este nevoie de cunostinte de baze de date: daca **ORM** a fost configurat corect, dezvoltarea ulterioara nu trebuie sa-si faca griij cu privire la problemele bazei de date SQL
+- Mai putina incarcare a bazei de date: entitatile sunt stocate in cache de catre **ORM**, nu este nevoie sa interogati DB pentru fiecare operatiune
+- Abstractie: asa cum am mentionat ORM are grija de accesul la date, astfel incat codul este la un nivel mai abstract si nu trebuie sa il schimbati daca va mutati intr-o alta baza de date, ORM face fata diferentelor de nivel scazut. 
+
+###### Dezavantaje:
+
+- Performanta: ORM-urile sunt facute pentru a festiona multe cazuri diferite, ceea ce le face complexe. Daca performanta este un factor foarte esential, ar trebui sa optimizati singuri interogarile pentru mijlocul ales de stocare a datelor
+- ORM este greu de debug
+
+### Diferentele dintre JDBC si JPA? Avantaje si dezavantaje
+
+
+
+**JDBC** inseamna **Java Data Base Conectivity** este o interfata de programare a aplicatiei , dare defineste modul in care un client poate accesa o baza de date.
+
+**JPA** inseamna **Java persistence API ** si este un standard pentru ORM. Este specificatia unei interfete de programare a aplicatiilor care descrie managementul datelor relationale in aplicatii ce folosesc JEE
+
+###### Avantajele JDBC:
+
+- Procesare SQL curata si simpla
+- Performanta buna cu date mari
+- Foarte bun pentru aplicatii mici
+- Sintaxa simpla si usor de invatat
+
+###### Dezavantaje JDBC:
+
+- Complex daca este folosit in aplicatii mari 
+
+- Nu exista **encapsulare**
+
+- Greu de implementat conceptul **MVC**
+
+  
+
+###### Avantaje JPA:
+
+- Reduce cantitatea de SQL pe care ar trebui sa o scrieti pentru a face un **CRUD** (Create, Read, Update, Delete), simplificand acele operatiuni cu unele metode generice, JPA face trasducerea obiectelor pe care le trimiteti in SQL.
+
+###### Dezavantaje JPA:
+
+- Procesare lenta si multa memorie RAM: Exista momente in care JPA isi va pierde performanta la procesarea rapoartelor, inserand o multime de entitati sau probleme cu o tranzactie care este deschisa de mult timp
+- Complexitatea framworkului: A crea CRUD cu JPA este simplu, insa problemele vor aparea atunci cand vom incepe sa folosim relatii cu entitati, mostenire, cache, manipulare, PersistanceUnit, PersistanceContex cu mai multe entitati etc.
+- Interogare complexa
+
+### Ce este Hiberanate? Avantaje. Limitari
+
+
+
+**Hibernate** este un framework care simplifica dezvoltarea aplicatiei Java pentru a interacctiona cu baza de date. Este un instrument **ORM** open source. Hibernate este o implementare standard a  specificatiei JPA, cu cateva caracteristici suplimentare care sunt specifice Hibernate. 
+
+###### Avantaje:
+
+- Open source & Lighweight
+- Performanta rapida
+- Interogare independenta de baza de date
+- Creare automata a tebelelor
+- Simplifica Join
+
+###### Adnotari in JPA:
+
+1. **@Entity** - Specifica faptul ca o clasa este o entitate. Defineste ca o clasa poate fi mapata la un tabel. Aceasta adnotare poate fi aplicata pe Class si pe Interface of enums.
+2. **@Column** - Este utilizata pentru a specifica coloana mapata pentru o propietate sau un camp persistent. Folosit pentru a specifica numele coloanei tabelului
+3. **@Id** - Campul membru de sub adnotare este cheia primara a entitatii curente.
+
+
+
+### Ce sunt adnotarile ?
+
+**Adnotarea** reprezinta o informatie suplimentara asociata unei portiuni a unui document.
+
+##### Adnotari in Spring:
+
+1. **@Required** - Adnotarea este aplicata pe metodete setter a beanului. Indica faptul ca bean-ul afectat trebuie populat in momentul configurarii cu propietatea necesara.
+2. **@Autowired ** - marcheaza o metoda Constructor, Setter, Properties si Config() ca fiind conectate automat, care injecteaza beans in timpul rularii prin mecanismul Spring Dependency Injection. Va permite sa injectati dependenta de obiect . Necesite mai putin cod deoarece nu trebuie sa scriem codul pentru a injecta dependinta in mod explicit.
+3. **@Configuration** - este un fisier de configurare analog pentru XML. Este configuratia in sine si va avea metodele pentru a instantia si configura dependintele
+4. **@Bean** - este folosita la nivel de metoda. Functioneaza cu **@Configuration** pentru a crea un Spring Bean. Deci **@Configuration** va avea metode pentru a instantia si configura dependintele. Astfel de metode vor fi adnotate cu **@Bean**.
+5. **@Component** - este folosita pe clase pentru a indica o compinenta **Spring**. Marcheaza o clasa Java ca o componenta bean 
+6. **@Repository** - este utilizata pe clasele Java care acceseaza direct baza de date. Functioneaza ca marker pentru orice clasa care indeplineste rolul de depozit sau de obiect de acces la date.
+7. **@EnableAutoConfiguration** - este plasat de obicei pe clasa main a aplicatiei. 
+8. **@SpringBootAplication** - singurul lucru pe care il face, este o scanare a componentelor. Dar va scana doar subpachetele sale.
+
+### Spring IoC Containers
+
+
+
+Containerul va crea obiectele, le va conecta impreuna, le va configura si va gestiona ciclul lor de viata complet de la creare pana la distrugere. Containerul Spring foloseste dependecy injection pentru a gestiona componentele care alcatuiesc o aplicatie. Aceste obiecte se numeste **Spring Beans**. Containerul primeste instructiunile despre obiectele de instantiat, configurat si asamblat citind metadatele de configurare furnizate. Metadatele de configurare pot fi reprezentate fie prin XML, adnotari Java sau cod Java.
+
+### Inversion Of Control
+
+
+
+Este un principiu care transfera controlul obiectelor sau portiunilor unui program intr-un container sau cadru.
+
+### Dependency Injection
+
+Inseamna trecerea unui obiect dependent ca parametru la o metoda, mai degraba decat ca o metoda sa creeze obiectul dependent. Ceea ce înseamnă în practică este că metoda nu are dependență directă pe o anumită implementare; orice implementare care îndeplinește cerințele poate fi trecută ca parametru
+
+Este o tehnica in care un obiect primeste alte obiecte de care depinde, numite dependinte. Este o tehnica care face o clasa independenta de dependintele sale, prin care un obect furnizeaza dependintele altui obiect. Obiectivul principal este de a separa responsabilitatea rezolvarii dependinteide obiect de comportamentul acestuia
+
+### Definitie Bean
+
+Obiectele care formeaza coloana vertebrala a aplicatiei si care sunt gestionate de containerul Spring se numesc Bean. Un bean este un obiect care este instantiat, asamblat si gestionat  de un container Spring. Aceste beanuri sunt create cu metadatele de configurare pe care le furnizati containerului.
+
