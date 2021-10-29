@@ -710,6 +710,16 @@ Hashing-ul este necesar în momentul comparării unei cantități uriașe de dat
 
 Deoarece criptarea este bidirectionala, datele pot fi decriptate, astfel incat sa poata fi citite din nou. Hashing, pe de alta parte, este unidirectional, ceea ce inseamna ca textul simplu este amestecat intr-un rezumat unic, prin utilizarea unei sari care nu poate fi decriptata.
 
+### Diferenta dintre synchronized si unsynchronized ?
+
+
+
+Daca un cod **synchronized** ruleaza, nu mai poate rula niciun alt cod **synchronized** pe obiectul respectiv din alt thread. Metodele **synchronized** ruleaza mai incet decat cele **non-synchronized**  pentru ca trebuie sa isi ia datele din **main memory** si dupa ce a arulat sa copieze datele in main memory.
+
+Pe langa main memory fiecare thread are cache-ul lui. O metoda synchronized trebuie si inainte si dupa rulare sa sincronizeze datele din cache-ul threadu-lui cu main memory. Pentru o metoda non-synchronizata nu trebuie aceasta sincronizare, ca lucrezi singe threaded, deci nu are cine altcineva sa modifica main memory in afara de threadu-ul curent.
+
+
+
 ### Ce este un ArrayList ?
 
 
@@ -1660,4 +1670,20 @@ Este o tehnica in care un obiect primeste alte obiecte de care depinde, numite d
 ### Definitie Bean
 
 Obiectele care formeaza coloana vertebrala a aplicatiei si care sunt gestionate de containerul Spring se numesc Bean. Un bean este un obiect care este instantiat, asamblat si gestionat  de un container Spring. Aceste beanuri sunt create cu metadatele de configurare pe care le furnizati containerului.
+
+
+
+# WEB
+
+### Ce este recursiunea ?
+
+Este procesul care intra in existenta atunci cand o functie apeleaza o copie a ei insasi petru a lucra la o problema mai mica. Orice functie care se autoapeleaza se numeste functie recursiva.
+
+### Diferenta dintre synchronus and asynchronus ?
+
+
+
+Cand executi cceva synchronus, astepti sa se termine ca sa te misti la urmatorul task. Cand executi ceva asynchron te poti muta la un alt task inainte ca executia sa fie terminata.
+
+
 
